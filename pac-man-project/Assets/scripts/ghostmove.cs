@@ -354,6 +354,10 @@ public class ghostmove : MonoBehaviour
         stopMov = false;
         transform.position = startPos;
         dir = startDir;
+        timer = 0;
+        scared = false;
+        scaredEnd = false;
+        speed = 10;
         MoveToLayer(transform, 9);
         MoveToLayer(transform.GetChild(0), 8);
     }
