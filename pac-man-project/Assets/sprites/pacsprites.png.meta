@@ -1,0 +1,839 @@
+fileFormatVersion: 2
+guid: 87b836d040ea44c45ab5a6bcd0caae77
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: pacman-left-0
+    21300002: pacman-left-1
+    21300004: pacman-left-2
+    21300006: pacman-left-3
+    21300008: pacman-down-0
+    21300010: pacman-down-1
+    21300012: pacman-down-2
+    21300014: pacman-down-3
+    21300016: pacman-right-0
+    21300018: pacman-right-1
+    21300020: pacman-right-2
+    21300022: pacman-right-3
+    21300024: pacman-up-0
+    21300026: pacman-up-1
+    21300028: pacman-up-2
+    21300030: pacman-up-3
+    21300032: small-point
+    21300034: big-point
+    21300036: red-up
+    21300038: red-left
+    21300040: red-right
+    21300042: red-down
+    21300044: scared
+    21300046: scared-end
+    21300048: eyes-up
+    21300050: eyes-left
+    21300052: eyes-right
+    21300054: eyes-down
+    21300056: blue-up
+    21300058: blue-left
+    21300060: blue-right
+    21300062: blue-down
+    21300064: pink-up
+    21300066: pink-left
+    21300068: pink-right
+    21300070: pink-down
+    21300072: orange-up
+    21300074: orange-left
+    21300076: orange-right
+    21300078: orange-down
+    21300080: death-left-0
+    21300082: death-left-1
+    21300084: death-left-2
+    21300086: death-left-3
+    21300088: death-left-4
+    21300090: death-left-5
+    21300092: death-left-6
+    21300094: death-down-0
+    21300096: death-down-1
+    21300098: death-down-2
+    21300100: death-down-3
+    21300102: death-down-4
+    21300104: death-down-5
+    21300106: death-down-6
+    21300108: death-right-0
+    21300110: death-right-1
+    21300112: death-right-2
+    21300114: death-right-3
+    21300116: death-right-4
+    21300118: death-right-5
+    21300120: death-right-6
+    21300122: death-up-0
+    21300124: death-up-1
+    21300126: death-up-2
+    21300128: death-up-3
+    21300130: death-up-4
+    21300132: death-up-5
+    21300134: death-up-6
+    21300136: death-7
+    21300138: death-8
+    21300140: death-9
+    21300142: death-10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 10
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: pacman-left-0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 217
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-left-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-left-2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 164
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-left-3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-down-0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 217
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-down-1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 191
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-down-2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 164
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-down-3
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 136
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-right-0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 217
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-right-1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 191
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-right-2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 165
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-right-3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 135
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-up-0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 217
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-up-1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 191
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-up-2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 162
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pacman-up-3
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 134
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: small-point
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 54
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big-point
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 15
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red-up
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 218
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red-left
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red-right
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 162
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red-down
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 134
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: scared
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 105
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: scared-end
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 75
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eyes-up
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 218
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eyes-left
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 190
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eyes-right
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 163
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eyes-down
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 135
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue-up
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 218
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue-left
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 191
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue-right
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 162
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue-down
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 134
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pink-up
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 218
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pink-left
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 191
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pink-right
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 162
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pink-down
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 135
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: orange-up
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 218
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: orange-left
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 190
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: orange-right
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 163
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: orange-down
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 135
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-4
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-5
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-left-6
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 100
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 70
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 70
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 69
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 69
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 69
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 68
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-down-6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 69
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 40
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 41
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 42
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 43
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 43
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 43
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-right-6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 44
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 9
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 9
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 10
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 10
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 10
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 11
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-up-6
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 10
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-7
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 106
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-8
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 71
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-9
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 40
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: death-10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 10
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
