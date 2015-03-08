@@ -190,7 +190,7 @@ public class ghostmove : MonoBehaviour
                                 GhostAi(new Vector3(target.position.x, target.position.y + 7, 0), false);
                                 break;
                             case "pink":
-                                GhostAi(new Vector3(target.position.x + 7, target.position.y + 7, 0), false);
+                                GhostAi(new Vector3(target.position.x + 14, target.position.y + 14, 0), false);
                                 break;
                             case "orange":
                                 GhostAi(new Vector3(target.position.x, target.position.y, 0), false);
