@@ -26,6 +26,7 @@ public class ghostmove : MonoBehaviour
     public float timer = 0;
     public int bigPointsCount = 4;
     Quaternion angle;
+
     void Start()
     {
         bigPointsCount = GameObject.FindGameObjectsWithTag("big-point").Length;
@@ -48,6 +49,7 @@ public class ghostmove : MonoBehaviour
             transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, -90);
         }
     }
+
     void Update()
     {
         transform.GetChild(0).transform.rotation = Quaternion.Lerp(transform.GetChild(0).rotation, angle, 0.1f);
@@ -87,7 +89,7 @@ public class ghostmove : MonoBehaviour
             canTurnUp = true;
             canTurnDown = true;
         }
-        if (!valid((Vector2)dir) && !stopMov)
+        if (!WallHit((Vector2)dir) && !stopMov)
         {
             transform.position += dir * speed * Time.deltaTime;
             GetComponent<Animator>().SetFloat("DirX", dir.x);
@@ -98,11 +100,10 @@ public class ghostmove : MonoBehaviour
         }
     }
 
-    bool valid(Vector2 dir)
+    bool WallHit(Vector2 dir)
     {
         Vector2 pos = transform.position;
         RaycastHit2D[] hit = Physics2D.LinecastAll(pos + dir + dir + (dir * 0.1f), pos);
-        Debug.DrawLine(pos, pos + dir + dir + (dir * 0.1f), Color.red);
         bool wallHit = false;
         for (int i = 0; i < hit.Length; i++)
         {
@@ -114,6 +115,7 @@ public class ghostmove : MonoBehaviour
         }
         return wallHit;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.parent != null)
@@ -212,6 +214,7 @@ public class ghostmove : MonoBehaviour
             }
         }
     }
+
     void GhostAi(Vector3 target, bool run)
     {
         while (canTurnDown || canTurnUp || canTurnRight || canTurnLeft)

@@ -27,6 +27,7 @@ public class pacmanmove : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     Quaternion angle;
+
     void Start()
     {
         startPos = transform.position;
@@ -48,6 +49,7 @@ public class pacmanmove : MonoBehaviour
             startAngle = Quaternion.Euler(0, 0, 0);
         }
     }
+
     void Update()
     {
         transform.GetChild(0).transform.rotation = Quaternion.Lerp(transform.GetChild(0).rotation, angle, 0.1f);
@@ -102,7 +104,7 @@ public class pacmanmove : MonoBehaviour
             canTurnUp = true;
             canTurnDown = true;
         }
-        if (!valid((Vector2)dir) && !dead && points.childCount != 0)
+        if (!WallHit((Vector2)dir) && !dead && points.childCount != 0)
         {
             transform.position += dir * speed * Time.deltaTime;
             GetComponent<Animator>().SetFloat("DirX", dir.x);
@@ -179,11 +181,10 @@ public class pacmanmove : MonoBehaviour
         }
     }
 
-    bool valid(Vector2 dir)
+    bool WallHit(Vector2 dir)
     {
         Vector2 pos = transform.position;
         RaycastHit2D[] hit = Physics2D.LinecastAll(pos + dir + dir + (dir * 0.1f), pos);
-        Debug.DrawLine(pos, pos + dir + dir + (dir * 0.1f), Color.red);
         bool wallHit = false;
         for (int i = 0; i < hit.Length; i++)
         {
