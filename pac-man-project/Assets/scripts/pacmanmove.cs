@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class pacmanmove : MonoBehaviour
+public class PacmanMove : MonoBehaviour
 {
     public Text scoreUI;
     public Text livesUI;
@@ -55,15 +55,15 @@ public class pacmanmove : MonoBehaviour
         transform.GetChild(0).transform.rotation = Quaternion.Lerp(transform.GetChild(0).rotation, angle, 0.1f);
         if (dead)
         {
-            Dead();  
-        } 
+            Dead();
+        }
         if (points.childCount == 0)
         {
             winText.SetActive(true);
             GameObject[] ghosts = GameObject.FindGameObjectsWithTag("ghost");
             foreach (var ghost in ghosts)
             {
-                ghost.GetComponent<ghostmove>().StopAI();
+                ghost.GetComponent<GhostMove>().StopAI();
             }
         }
         if (dir == Vector3.left || dir == Vector3.right)
@@ -76,7 +76,7 @@ public class pacmanmove : MonoBehaviour
             canTurnUp = true;
             canTurnDown = true;
         }
-        if (!Utility.WallHit(transform,(Vector2)dir) && !dead && points.childCount != 0)
+        if (!Utility.WallHit(transform, (Vector2)dir) && !dead && points.childCount != 0)
         {
             transform.position += dir * speed * Time.deltaTime;
             GetComponent<Animator>().SetFloat("DirX", dir.x);
@@ -90,9 +90,9 @@ public class pacmanmove : MonoBehaviour
         {
             Application.LoadLevel(0);
         }
-        if (Input.GetButtonDown("Right"))
+        if (Input.GetButtonDown("Right") && canTurnRight)
         {
-            if (dir == Vector3.left && canTurnRight)
+            if (dir == Vector3.left)
             {
                 angle = Quaternion.Euler(0, 0, 180);
                 dir = Vector3.right;
@@ -102,7 +102,7 @@ public class pacmanmove : MonoBehaviour
                 turnRight = true;
             }
         }
-        if (Input.GetButtonDown("Left"))
+        if (Input.GetButtonDown("Left") && canTurnLeft)
         {
             if (dir == Vector3.right)
             {
@@ -114,7 +114,7 @@ public class pacmanmove : MonoBehaviour
                 turnLeft = true;
             }
         }
-        if (Input.GetButtonDown("Up"))
+        if (Input.GetButtonDown("Up") && canTurnUp)
         {
             if (dir == Vector3.down)
             {
@@ -126,7 +126,7 @@ public class pacmanmove : MonoBehaviour
                 turnUp = true;
             }
         }
-        if (Input.GetButtonDown("Down"))
+        if (Input.GetButtonDown("Down") && canTurnDown)
         {
             if (dir == Vector3.up)
             {
@@ -138,7 +138,7 @@ public class pacmanmove : MonoBehaviour
                 turnDown = true;
             }
         }
-        
+
     }
 
     private void Dead()
@@ -164,14 +164,14 @@ public class pacmanmove : MonoBehaviour
                     GameObject[] ghosts = GameObject.FindGameObjectsWithTag("ghost");
                     foreach (var ghost in ghosts)
                     {
-                        ghost.GetComponent<ghostmove>().Reset();
+                        ghost.GetComponent<GhostMove>().Reset();
                     }
                     dead = false;
                     GetComponent<Animator>().SetBool("dead", dead);
                     pacman3d.GetComponent<Animator>().SetBool("dead", dead);
                 }
             }
-        } 
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -190,21 +190,21 @@ public class pacmanmove : MonoBehaviour
         }
         else if (other.tag.CompareTo("ghost") == 0)
         {
-            if (other.GetComponent<ghostmove>().scared == true)
+            if (other.GetComponent<GhostMove>().scared == true)
             {
-                other.GetComponent<ghostmove>().eaten = true;
-                other.GetComponent<ghostmove>().scared = false;
-                other.GetComponent<ghostmove>().scaredEnd = false;
+                other.GetComponent<GhostMove>().eaten = true;
+                other.GetComponent<GhostMove>().scared = false;
+                other.GetComponent<GhostMove>().scaredEnd = false;
                 score += 200;
                 scoreUI.text = score.ToString();
             }
-            if (other.GetComponent<ghostmove>().eaten == false)
+            if (other.GetComponent<GhostMove>().eaten == false)
             {
                 dead = true;
                 GameObject[] ghosts = GameObject.FindGameObjectsWithTag("ghost");
                 foreach (var ghost in ghosts)
                 {
-                    ghost.GetComponent<ghostmove>().StopAI();
+                    ghost.GetComponent<GhostMove>().StopAI();
                 }
                 GetComponent<Animator>().SetBool("dead", dead);
                 pacman3d.GetComponent<Animator>().SetBool("dead", dead);
@@ -257,7 +257,7 @@ public class pacmanmove : MonoBehaviour
             if (other.transform.parent.name.CompareTo("turns") == 0)
             {
                 float dis = Vector3.Distance(transform.position, other.transform.position);
-                if (turnLeft && dis < 0.3)
+                if (turnLeft && dis < 0.4)
                 {
                     turnLeft = false;
                     canTurnUp = false;
@@ -268,7 +268,7 @@ public class pacmanmove : MonoBehaviour
                     angle = Quaternion.Euler(0, 0, 0);
                     dir = Vector3.left;
                 }
-                else if (turnRight && dis < 0.3)
+                else if (turnRight && dis < 0.4)
                 {
                     turnRight = false;
                     canTurnUp = false;
@@ -279,7 +279,7 @@ public class pacmanmove : MonoBehaviour
                     angle = Quaternion.Euler(0, 0, 180);
                     dir = Vector3.right;
                 }
-                else if (turnUp && dis < 0.3)
+                else if (turnUp && dis < 0.4)
                 {
                     turnUp = false;
                     canTurnUp = true;
@@ -290,7 +290,7 @@ public class pacmanmove : MonoBehaviour
                     angle = Quaternion.Euler(0, 0, -90);
                     dir = Vector3.up;
                 }
-                else if (turnDown && dis < 0.3)
+                else if (turnDown && dis < 0.4)
                 {
                     turnDown = false;
                     canTurnUp = false;

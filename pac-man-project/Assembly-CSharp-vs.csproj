@@ -46,9 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\GhostMove.cs" />
+     <Compile Include="Assets\scripts\PacmanMove.cs" />
      <Compile Include="Assets\scripts\Utility.cs" />
-     <Compile Include="Assets\scripts\ghostmove.cs" />
-     <Compile Include="Assets\scripts\pacmanmove.cs" />
      <None Include="Assets\shaders\Shadless.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>

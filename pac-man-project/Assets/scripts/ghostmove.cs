@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ghostmove : MonoBehaviour
+public class GhostMove : MonoBehaviour
 {
     public Transform respawn;
     public Transform target;
