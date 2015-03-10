@@ -89,7 +89,7 @@ public class ghostmove : MonoBehaviour
             canTurnUp = true;
             canTurnDown = true;
         }
-        if (!WallHit((Vector2)dir) && !stopMov)
+        if (!Utility.WallHit(transform, (Vector2)dir) && !stopMov)
         {
             transform.position += dir * speed * Time.deltaTime;
             GetComponent<Animator>().SetFloat("DirX", dir.x);
@@ -98,22 +98,6 @@ public class ghostmove : MonoBehaviour
             GetComponent<Animator>().SetBool("scaredend", scaredEnd);
             GetComponent<Animator>().SetBool("eaten", eaten);
         }
-    }
-
-    bool WallHit(Vector2 dir)
-    {
-        Vector2 pos = transform.position;
-        RaycastHit2D[] hit = Physics2D.LinecastAll(pos + dir + dir + (dir * 0.1f), pos);
-        bool wallHit = false;
-        for (int i = 0; i < hit.Length; i++)
-        {
-            if (hit[i].collider.gameObject.name.CompareTo("Wall") == 0)
-            {
-                wallHit = true;
-                break;
-            }
-        }
-        return wallHit;
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -53,38 +53,10 @@ public class pacmanmove : MonoBehaviour
     void Update()
     {
         transform.GetChild(0).transform.rotation = Quaternion.Lerp(transform.GetChild(0).rotation, angle, 0.1f);
-        if (dead == true)
+        if (dead)
         {
-            if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-left") ||
-                GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-right") ||
-                GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-up") ||
-                GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-down"))
-            {
-                if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-                {
-                    if (lives == 0)
-                    {
-                        gameoverText.SetActive(true);
-                    }
-                    else
-                    {
-                        lives--;
-                        livesUI.text = lives.ToString();
-                        transform.position = startPos;
-                        dir = startDir;
-                        angle = startAngle;
-                        GameObject[] ghosts = GameObject.FindGameObjectsWithTag("ghost");
-                        foreach (var ghost in ghosts)
-                        {
-                            ghost.GetComponent<ghostmove>().Reset();
-                        }
-                        dead = false;
-                        GetComponent<Animator>().SetBool("dead", dead);
-                        pacman3d.GetComponent<Animator>().SetBool("dead", dead);
-                    }
-                }
-            }
-        }
+            Dead();  
+        } 
         if (points.childCount == 0)
         {
             winText.SetActive(true);
@@ -104,7 +76,7 @@ public class pacmanmove : MonoBehaviour
             canTurnUp = true;
             canTurnDown = true;
         }
-        if (!WallHit((Vector2)dir) && !dead && points.childCount != 0)
+        if (!Utility.WallHit(transform,(Vector2)dir) && !dead && points.childCount != 0)
         {
             transform.position += dir * speed * Time.deltaTime;
             GetComponent<Animator>().SetFloat("DirX", dir.x);
@@ -118,83 +90,88 @@ public class pacmanmove : MonoBehaviour
         {
             Application.LoadLevel(0);
         }
-        if (Input.GetButton("Right"))
-        {
-            if (dir == Vector3.left && canTurnUp)
-            {
-                turnUp = true;
-            }
-            if (dir == Vector3.right && canTurnDown)
-            {
-                turnDown = true;
-            }
-            if (dir == Vector3.up && canTurnRight)
-            {
-                turnRight = true;
-            }
-            if (dir == Vector3.down && canTurnLeft)
-            {
-                turnLeft = true;
-            }
-        }
-        if (Input.GetButtonDown("Down"))
+        if (Input.GetButtonDown("Right"))
         {
             if (dir == Vector3.left && canTurnRight)
             {
                 angle = Quaternion.Euler(0, 0, 180);
                 dir = Vector3.right;
             }
-            else if (dir == Vector3.right && canTurnLeft)
-            {
-                angle = Quaternion.Euler(0, 0, 0);
-                dir = Vector3.left;
-            }
-            else if (dir == Vector3.up && canTurnDown)
-            {
-                angle = Quaternion.Euler(0, 0, 90);
-                dir = Vector3.down;
-            }
-            else if (dir == Vector3.down && canTurnUp)
-            {
-                angle = Quaternion.Euler(0, 0, -90);
-                dir = Vector3.up;
-            }
-        }
-        if (Input.GetButton("Left"))
-        {
-            if (dir == Vector3.left && canTurnDown)
-            {
-                turnDown = true;
-            }
-            if (dir == Vector3.right && canTurnUp)
-            {
-                turnUp = true;
-            }
-            if (dir == Vector3.up && canTurnLeft)
-            {
-                turnLeft = true;
-            }
-            if (dir == Vector3.down && canTurnRight)
+            else
             {
                 turnRight = true;
             }
         }
-    }
-
-    bool WallHit(Vector2 dir)
-    {
-        Vector2 pos = transform.position;
-        RaycastHit2D[] hit = Physics2D.LinecastAll(pos + dir + dir + (dir * 0.1f), pos);
-        bool wallHit = false;
-        for (int i = 0; i < hit.Length; i++)
+        if (Input.GetButtonDown("Left"))
         {
-            if (hit[i].collider.gameObject.name.CompareTo("Wall") == 0)
+            if (dir == Vector3.right)
             {
-                wallHit = true;
-                break;
+                angle = Quaternion.Euler(0, 0, 0);
+                dir = Vector3.left;
+            }
+            else
+            {
+                turnLeft = true;
             }
         }
-        return wallHit;
+        if (Input.GetButtonDown("Up"))
+        {
+            if (dir == Vector3.down)
+            {
+                angle = Quaternion.Euler(0, 0, -90);
+                dir = Vector3.up;
+            }
+            else
+            {
+                turnUp = true;
+            }
+        }
+        if (Input.GetButtonDown("Down"))
+        {
+            if (dir == Vector3.up)
+            {
+                angle = Quaternion.Euler(0, 0, 90);
+                dir = Vector3.down;
+            }
+            else
+            {
+                turnDown = true;
+            }
+        }
+        
+    }
+
+    private void Dead()
+    {
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-left") ||
+            GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-right") ||
+            GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-up") ||
+            GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("death-down"))
+        {
+            if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            {
+                if (lives == 0)
+                {
+                    gameoverText.SetActive(true);
+                }
+                else
+                {
+                    lives--;
+                    livesUI.text = lives.ToString();
+                    transform.position = startPos;
+                    dir = startDir;
+                    angle = startAngle;
+                    GameObject[] ghosts = GameObject.FindGameObjectsWithTag("ghost");
+                    foreach (var ghost in ghosts)
+                    {
+                        ghost.GetComponent<ghostmove>().Reset();
+                    }
+                    dead = false;
+                    GetComponent<Animator>().SetBool("dead", dead);
+                    pacman3d.GetComponent<Animator>().SetBool("dead", dead);
+                }
+            }
+        } 
     }
 
     void OnTriggerEnter2D(Collider2D other)
