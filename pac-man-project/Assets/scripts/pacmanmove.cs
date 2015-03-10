@@ -176,13 +176,8 @@ public class PacmanMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name.CompareTo("small-point") == 0)
-        {
-            score++;
-            scoreUI.text = score.ToString();
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.name.CompareTo("big-point") == 0)
+        if (other.gameObject.name.CompareTo("small-point") == 0 ||
+            other.gameObject.name.CompareTo("big-point") == 0)
         {
             score++;
             scoreUI.text = score.ToString();

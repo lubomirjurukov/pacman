@@ -32,23 +32,10 @@ public class GhostMove : MonoBehaviour
         bigPointsCount = GameObject.FindGameObjectsWithTag("big-point").Length;
         startPos = transform.position;
         startDir = dir;
-        if (dir == Vector3.down)
-        {
-            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if (dir == Vector3.up)
-        {
-            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 180);
-        }
-        else if (dir == Vector3.right)
-        {
-            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 90);
-        }
-        else if (dir == Vector3.left)
-        {
-            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, -90);
-        }
+        Rotate();
     }
+
+    
 
     void Update()
     {
@@ -77,7 +64,6 @@ public class GhostMove : MonoBehaviour
             {
                 scaredEnd = true;
             }
-
         }
         if (dir == Vector3.left || dir == Vector3.right)
         {
@@ -199,6 +185,26 @@ public class GhostMove : MonoBehaviour
         }
     }
 
+    private void Rotate()
+    {
+        if (dir == Vector3.down)
+        {
+            angle = Quaternion.Euler(0, 0, 0);
+        }
+        else if (dir == Vector3.up)
+        {
+            angle = Quaternion.Euler(0, 0, 180);
+        }
+        else if (dir == Vector3.right)
+        {
+            angle = Quaternion.Euler(0, 0, 90);
+        }
+        else if (dir == Vector3.left)
+        {
+            angle = Quaternion.Euler(0, 0, -90);
+        }
+    }
+
     void GhostAi(Vector3 target, bool run)
     {
         while (canTurnDown || canTurnUp || canTurnRight || canTurnLeft)
@@ -284,8 +290,9 @@ public class GhostMove : MonoBehaviour
                     canTurnLeft = true;
                     canTurnRight = false;
                     transform.position = other.transform.position;
-                    angle = Quaternion.Euler(0, 0, -90);
+                    
                     dir = Vector3.left;
+                    Rotate();
                 }
                 else if (turnRight && dis < 0.3)
                 {
@@ -295,8 +302,8 @@ public class GhostMove : MonoBehaviour
                     canTurnLeft = false;
                     canTurnRight = true;
                     transform.position = other.transform.position;
-                    angle = Quaternion.Euler(0, 0, 90);
                     dir = Vector3.right;
+                    Rotate();
                 }
                 else if (turnUp && dis < 0.3)
                 {
@@ -305,9 +312,9 @@ public class GhostMove : MonoBehaviour
                     canTurnDown = false;
                     canTurnLeft = false;
                     canTurnRight = false;
-                    transform.position = other.transform.position;
-                    angle = Quaternion.Euler(0, 0, 180);
+                    transform.position = other.transform.position; 
                     dir = Vector3.up;
+                    Rotate();
                 }
                 else if (turnDown && dis < 0.3)
                 {
@@ -316,9 +323,9 @@ public class GhostMove : MonoBehaviour
                     canTurnDown = true;
                     canTurnLeft = false;
                     canTurnRight = false;
-                    transform.position = other.transform.position;
-                    angle = Quaternion.Euler(0, 0, 0);
+                    transform.position = other.transform.position; 
                     dir = Vector3.down;
+                    Rotate();
                 }
             }
         }
